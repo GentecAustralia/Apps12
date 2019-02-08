@@ -67,7 +67,8 @@ class Picking(models.Model):
                         'team_id': sale_order.team_id.id,
                         'comment': sale_order.note,})
                     invoice.date_invoice =fields.Datetime.now().date()
-                    for sale_line in self.move_lines:
+                    #for sale_line in self.move_lines:
+                    for sale_line in sale_order.sale_line
                         if sale_line.product_id.property_account_income_id:
                             account = sale_line.product_id.property_account_income_id
                         elif sale_line.product_id.categ_id.property_account_income_categ_id:
